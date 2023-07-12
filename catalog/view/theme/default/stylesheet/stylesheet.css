@@ -100,8 +100,8 @@ select.form-control, textarea.form-control, input[type="text"].form-control, inp
 .form-control, input[type="datetime"],
 .form-control, input[type="datetime-local"],
 .form-control, input[type="date"],
-.form-control, input[type="month"].form-control, input[type="time"].form-control, input[type="week"].form-control, 
-               input[type="number"].form-control, input[type="email"].form-control, input[type="url"].form-control, 
+.form-control, input[type="month"].form-control, input[type="time"].form-control, input[type="week"].form-control,
+               input[type="number"].form-control, input[type="email"].form-control, input[type="url"].form-control,
                input[type="search"].form-control, input[type="tel"].form-control, input[type="color"].form-control {
 	font-size: 1.5rem;	color: #aaa;
 }
@@ -109,8 +109,8 @@ select.form-control:focus, textarea.form-control:focus, input[type="text"].form-
 .form-control, input[type="datetime"]:focus,
 .form-control, input[type="datetime-local"]:focus,
 .form-control, input[type="date"]:focus,
-.form-control, input[type="month"].form-control:focus, input[type="time"].form-control:focus, input[type="week"].form-control:focus, 
-               input[type="number"].form-control:focus, input[type="email"].form-control:focus, input[type="url"].form-control:focus, 
+.form-control, input[type="month"].form-control:focus, input[type="time"].form-control:focus, input[type="week"].form-control:focus,
+               input[type="number"].form-control:focus, input[type="email"].form-control:focus, input[type="url"].form-control:focus,
                input[type="search"].form-control:focus, input[type="tel"].form-control:focus, input[type="color"].form-control:focus
 {
     color: #eee;
@@ -234,7 +234,7 @@ div.required .control-label:before {
 	background-color: white;
     /*border-color: #c9c4c4;*/
 	    background: linear-gradient(165deg, rgb(106, 111, 77) 0%, rgb(153, 159, 112) 10%, rgb(229, 243, 146) 50%, rgb(153, 159, 112) 90%, rgb(106, 111, 77) 100%);
-    /* border-color: #c9c4c4; 
+    /* border-color: #c9c4c4;
     color: #23241a;*/
 	color: black;
 }
@@ -270,7 +270,7 @@ div.required .control-label:before {
     background-color: transparent;
 }
 
-#cart > .btn:hover { 
+#cart > .btn:hover {
 	color: #e9f0c3;
     /* border: 2px solid; */
 }
@@ -469,7 +469,7 @@ footer p {
 	text-align: center;
 }
 footer h5 {
-	
+
 	font-size: 1.4em;
 	font-weight: bold;
 	color: #d7e29f;
@@ -775,7 +775,7 @@ h2.price {
 .product-thumb .button-group {
 	/*border-top: 1px solid #ddd; */
     background-color: #b6b66936;
-    overflow: auto; 
+    overflow: auto;
     flex-direction: row;
     justify-content: center;
 	font-size: initial;
@@ -922,7 +922,7 @@ h2.price {
 
 .container {
     width: 90%;
-	
+
 }
 
 iframe {
@@ -1079,9 +1079,9 @@ b, strong {
     border-radius: 4px;
 }
 
-#common-home, 
-#product-product, 
-#checkout-checkout, 
+#common-home,
+#product-product,
+#checkout-checkout,
 #common-success,
 #information-information,
 #account-return,
@@ -1144,7 +1144,7 @@ color: #5e543b;
 
 .card-head a:hover {
 	color: #e9efaa;
-	
+
 	text-decoration: none;
 }
 
@@ -1353,8 +1353,8 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 }
 
 .feature-description {
-	margin: 20px 0; 
-	min-height: 110px; 
+	margin: 20px 0;
+	min-height: 110px;
 	font-size: 1.8rem;
 }
 
@@ -1366,7 +1366,7 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 	font-size: 2.6rem;
 }
 
-.fa-shopping-cart-2rem, 
+.fa-shopping-cart-2rem,
 li a .fa-shopping-cart {
 	font-size: 2rem;
 }
@@ -1393,7 +1393,7 @@ button .btn-block .fa-shopping-cart {
 	.fa-shopping-cart {
 		font-size: 4rem;
 	}
-	
+
 	#search {
 		margin-bottom: 20px;
 		margin-top: 16px;
@@ -1404,15 +1404,15 @@ button .btn-block .fa-shopping-cart {
 	.blog-latest-header {
 		display: inherit;
 	}
-	
+
 	#content {
 		padding: 8p 16px;
 	}
-	
+
 	.search-panel {
 		padding: 0 0;
-	}	
-	
+	}
+
 	.nav-gradient .dropdown-panel {
 		margin-top: 42px;
 		background: #666565;
@@ -1421,7 +1421,7 @@ button .btn-block .fa-shopping-cart {
 		border: 2px solid silver;
 		border-radius: 8px;
 	}
-	
+
 	.container {
 		padding-right: 0;
 		padding-left: 0;
@@ -1429,12 +1429,12 @@ button .btn-block .fa-shopping-cart {
 		margin-left: auto;
 		width: 100%;
 	}
-	
+
 	.row {
 		margin-left: 0;
 		margin-right: 0;
 	}
-	
+
 	.float-cart {
 		/*right: 30px;*/
 		width: 100%;
@@ -1459,29 +1459,29 @@ button .btn-block .fa-shopping-cart {
 	.navbar-toggle {
 		padding: 0;
 	}
-	
+
 	.fa-4x {
 		/*font-size: 2rem;*/
 		margin-top: -32px;
 	}
-	
+
 	.logo-panel {
 		margin-top: 50px;
 	}
-	
+
 	.form-horizontal .form-group {
 		margin-right: 0;
-		margin-left: 0;		
+		margin-left: 0;
 	}
-	
+
 	.navbar {
 		min-height: 0;
 	}
-	
+
 	.check-list {
 		font-size: 1.1rem;
 		padding-left: 8px;
 	}
-	
-	
+
+
 }

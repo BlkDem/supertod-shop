@@ -17,7 +17,7 @@
 {% if description %}
 <meta name="description" content="{{ description }}" />
 {% else %}
-<meta name="description" content="Umolab.ru - PC Chassis acril" />
+<meta name="description" content="Umolab Devices" />
 {% endif %}
 {% if keywords %}
 <meta name="keywords" content="{{ keywords }}" />
@@ -52,8 +52,9 @@
 {% endfor %}
 </head>
 <body>
-<nav id="top">
-  <div class="container">{{ currency }}
+<nav id="top" class="nav-gradient">
+  <div class="container mt-2">
+    {{ currency }}
     {{ language }}
 	{{ blog_menu }}
     <div id="top-links" class="nav pull-right">
@@ -81,7 +82,10 @@
   </div>
 </nav>
 <header>
-  <div class="container">
+        <div class="float-cart">
+        {{ cart }}
+        </div>
+  <div class="container  header-image">
     <div class="row">
       <div class="col-sm-4">
 		<div id="logo">
@@ -96,9 +100,68 @@
           {% endif %}
 		</div>
       </div>
-      <div class="col-sm-5">{{ search }}</div>
-      <div class="col-sm-3">{{ cart }}</div>
+      <!--<div class="col-sm-5">{{ search }}</div>
+      <div class="col-sm-3">{{ cart }}</div>-->
+    </div>
+    <div class="row row-center" data-v-2ff5b816="">
+      <div class="col-md-6">
+      </div>
+      <div class="logo-panel col-md-6" data-v-2ff5b816="">
+        <div class="mb-4" data-v-2ff5b816="">
+          <img class="w-100" src="https://umolab-devices.com/catalog/view/theme/default/image/logo2.png" data-v-2ff5b816="">
+        </div>
+        <ul class="check-list list-unstyled logo-ul" data-v-2ff5b816="">
+          <li class="mt-4"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="check square" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-check-square b-icon bi" data-v-2ff5b816=""><g data-v-2ff5b816=""><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path><path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"></path></g></svg>
+            Ручное управление раздаточной коробкой
+          </li>
+          <li class="mt-4"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="check square" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-check-square b-icon bi" data-v-2ff5b816=""><g data-v-2ff5b816=""><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path><path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"></path></g></svg>
+            Удовольствие от "классического" привода 2Н
+          </li>
+          <li class="mt-4"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="check square" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-check-square b-icon bi" data-v-2ff5b816=""><g data-v-2ff5b816=""><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path><path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"></path></g></svg>
+            Надежность прохождения сложных участков в 4Н
+          </li>
+        </ul>
+        <div>
+          <div id="search" class="input-group">
+  <input type="text" name="search" value="" class="form-control input-lg">
+  <span class="input-group-btn">
+    <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+  </span>
+</div>
+</div>
+      </div>
     </div>
   </div>
+
+  <div class="text-center">
+      <nav class="navbar nav-gradient ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse nav-dropdown dropdown-panel" id="bs-example-navbar-collapse-1">
+      <!--<ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+      </ul>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/about_us">О SuperTOD</a></li>
+        <li><a href="/index.php?route=product/product&amp;product_id=50">ST 2 Mini</a></li>
+        <li><a href="/index.php?route=product/product&amp;product_id=53">ST 2 LCD</a></li>
+        <li><a href="/index.php?route=product/product&amp;product_id=51">ST 2 GM</a></li>
+        <li><a href="/index.php?route=product/product&amp;product_id=54">ST 3</a></li>
+		<li><a href="https://umolab-devices.com/index.php?route=information/contact">Контакты</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+      <!-- <div class="col-sm-3">
+		<div id="logo">              <a href="https://umolab-devices.com"><img src="https://umolab-devices.com/image/catalog/apple-icon.png" title="Umolab Store" alt="Umolab Store" class="img-responsive" /></a>		</div> -->
+      </div>
 </header>
 {{ menu }}

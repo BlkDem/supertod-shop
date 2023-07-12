@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "label": "Start Server",
+          "type": "shell",
+          "command": "php -S localhost:8080 -t ${fileDirname}",
+          "isBackground": true,
+          "group": "build",
+          "problemMatcher": []
+      },
+      {
+          "label": "Run In Browser",
+          "type": "shell",
+          "command": "open http://localhost:8080/${fileBasename}",
+          "windows": {
+              "command": "explorer 'http://localhost:8080/${fileBasename}'"
+          },
+          "group": "build",
+          "problemMatcher": []
+      },
+      {
+          "label": "Run In Terminal",
+          "type": "shell",
+          "command": "php ${file}",
+          "group": "none",
+          "problemMatcher": []
+      }
+  ]
+}
