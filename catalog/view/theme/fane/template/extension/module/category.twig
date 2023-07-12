@@ -1,0 +1,19 @@
+<div class="module-block">
+ <div class="category-list">
+  {% for category in categories %}
+  {% if category.category_id == category_id %} 
+  <a href="{{ category.href }}" class="active">{{ category.name }}</a> 
+  {% if category.children %}
+  {% for child in category.children %}
+  {% if child.category_id == child_id %}
+  <a id="children-cats" href="{{ child.href }}" class="active"> {{ child.name }}</a> 
+  {% else %} 
+  <a id="children-cats" href="{{ child.href }}" > {{ child.name }}</a>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% else %} <a href="{{ category.href }}">{{ category.name }}</a>
+  {% endif %}
+  {% endfor %}
+</div>
+</div>

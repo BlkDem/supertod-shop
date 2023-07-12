@@ -1,0 +1,169 @@
+{{ header }}{{ column_left }}
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="pull-left">
+                <h1>{{ heading_title }}</h1>
+                <ul class="breadcrumb">
+                    {% for breadcrumb in breadcrumbs %}
+                        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid">{% if error_warning %}
+                <div class="alert alert-danger alert-dismissible"><i
+                            class="fa fa-exclamation-circle"></i> {{ error_warning }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            {% endif %}
+            {% if success %}
+                <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            {% endif %}
+            <div class="row">
+
+                <div id="filter-order" class="col-md-3 col-md-push-9 col-sm-12 hidden-sm hidden-xs">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-filter"></i> {{ text_filter }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="control-label" for="input-order-id">{{ entry_order_id }}</label>
+                                <input type="text" name="filter_order_id" value="{{ filter_order_id }}"
+                                       placeholder="{{ entry_order_id }}" id="input-order-id" class="form-control"/>
+                            </div>
+                            <div class="form-group text-right">
+                                <button type="button" id="button-filter" class="btn btn-default"><i
+                                            class="fa fa-filter"></i> {{ button_filter }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-md-pull-3 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-list"></i> {{ text_list }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form method="post" action="" enctype="multipart/form-data" id="form-order">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <td style="width: 1px;" class="text-center"><input type="checkbox"
+                                                                                               onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"/>
+                                            </td>
+                                            <td class="text-left">{% if sort == 'order_id' %} <a
+                                                        href="{{ sort_order_id }}"
+                                                        class="{{ order|lower }}">{{ column_order_id }}</a> {% else %}
+                                                    <a href="{{ sort_order_id }}">{{ column_order_id }}</a> {% endif %}
+                                            </td>
+                                            <td class="text-left">{% if sort == 'im_id' %} <a href="{{ sort_im_id }}"
+                                                        class="{{ order|lower }}">{{ column_im_id }}</a> {% else %}
+                                                    <a href="{{ sort_im_id }}">{{ column_im_id }}</a> {% endif %}</td>
+                                            <td class="text-left">{% if sort == 'label' %} <a href="{{ sort_label }}"
+                                                        class="{{ order|lower }}">{{ column_label }}</a> {% else %}
+                                                    <a href="{{ sort_label }}">{{ column_label }}</a> {% endif %}</td>
+                                            <td class="text-left">{% if sort == 'boxberry_to_point' %} <a
+                                                        href="{{ sort_boxberry_to_point }}"
+                                                        class="{{ order|lower }}">{{ column_boxberry_to_point }}</a> {% else %}
+                                                    <a href="{{ sort_boxberry_to_point }}">{{ column_boxberry_to_point }}</a> {% endif %}
+                                            </td>
+                                            <td class="text-left">{% if sort == 'address' %} <a
+                                                        href="{{ sort_address }}"
+                                                        class="{{ order|lower }}">{{ column_address }}</a> {% else %} <a
+                                                        href="{{ sort_address }}">{{ column_address }}</a> {% endif %}
+                                            </td>
+
+                                            <td class="text-left">{% if sort == 'error' %} <a href="{{ sort_error }}"
+                                                        class="{{ order|lower }}">{{ column_error }}</a> {% else %}
+                                                    <a href="{{ sort_error }}">{{ column_error }}</a> {% endif %}</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% if deliveries %}
+                                            {% for delivery in deliveries %}
+                                                <tr>
+                                                    <td class="text-center"> {% if delivery.order_id in selected %}
+                                                            <input type="checkbox" name="selected[]"
+                                                                   value="{{ delivery.order_id }}" checked="checked"/>
+                                                        {% else %}
+                                                            <input type="checkbox" name="selected[]"
+                                                                   value="{{ delivery.order_id }}"/>
+                                                        {% endif %}
+                                                    <td class="text-right">{{ delivery.order_id }}</td>
+                                                    <td class="text-left">
+                                                        {% if (delivery['im_id'] is not empty) %}
+                                                        {% set tracking_link = delivery['im_id']|split(' ') %}
+                                                        {% if (tracking_link[1] is not empty) %}
+                                                            {{ tracking_link[0] }}<p></p>
+                                                        <a target="_blank" href="{{ tracking_link[1] }}">Ссылка на отслеживание</a>
+                                                        {% else %}
+                                                            {{ delivery['im_id'] }}
+                                                        {% endif %}
+                                                        {% endif %}
+                                                        </td>
+                                                    <td class="text-left">
+                                                        {% if (delivery['label'] is not empty) %}
+                                                        {% set new_label = delivery['label']|split(' ') %}
+                                                        {% if (new_label[0] is not empty) %}
+                                                        <a target="_blank" href="{{ new_label[0] }}">Скачать
+                                                            этикетку</a><br>
+                                                    {% else %}
+                                                        <a target="_blank" href="{{ delivery['label'] }}">Скачать
+                                                            этикетку</a><br>
+                                                        {% endif %}
+                                                        {% endif %}
+                                                        {% if (delivery['label'] is not empty) %}
+                                                            {% set act_label = delivery['label']|split(' ') %}
+                                                            {% if (act_label[1] is not empty) %}
+                                                                <p></p>
+                                                                <a target="_blank" href="{{ act_label[1] }}">Скачать
+                                                            акт</a>
+                                                        {% endif %}
+                                                        {% endif %}
+                                                    </td>
+                                                    <td class="text-left">{{ delivery.boxberry_to_point }}</td>
+                                                    <td class="text-left">
+                                                        {{ delivery.address }}
+                                                    </td>
+                                                    <td class="text-left">{{ delivery.error }}</td>
+
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td class="text-center" colspan="8">{{ text_no_results }}</td>
+                                            </tr>
+                                        {% endif %}
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-sm-6 text-left">{{ pagination }}</div>
+                                <div class="col-sm-6 text-right">{{ results }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript"><!--
+                $('#button-filter').on('click', function () {
+                    url = '';
+                    var filter_order_id = $('input[name=\'filter_order_id\']').val();
+                    if (filter_order_id) {
+                        url += '&filter_order_id=' + encodeURIComponent(filter_order_id);
+                    }
+                    location = 'index.php?route=sale/boxberry&user_token={{ user_token }}' + url;
+                });
+                //--></script>
+        </div>
+{{ footer }}

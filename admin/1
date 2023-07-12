@@ -1,0 +1,274 @@
+[21-Dec-2022 19:56:21 Europe/Moscow] PHP Warning:  fopen(/var/www/storage3/logs/error.log): failed to open stream: No such file or directory in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 22
+[21-Dec-2022 19:56:21 Europe/Moscow] PHP Stack trace:
+[21-Dec-2022 19:56:21 Europe/Moscow] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 19:56:21 Europe/Moscow] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 19:56:21 Europe/Moscow] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 19:56:21 Europe/Moscow] PHP   4. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:12
+[21-Dec-2022 19:56:21 Europe/Moscow] PHP   5. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:56:21 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:56:21 UTC] PHP Stack trace:
+[21-Dec-2022 16:56:21 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:56:21 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:56:21 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:56:21 UTC] PHP   4. Openbay->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:124
+[21-Dec-2022 16:56:21 UTC] PHP   5. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/openbay.php:22
+[21-Dec-2022 16:56:21 UTC] PHP   6. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:56:21 UTC] PHP   7. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:56:21 UTC] PHP   8. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:56:21 UTC] PHP   9. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:56:21 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:56:21 UTC] PHP Stack trace:
+[21-Dec-2022 16:56:21 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:56:21 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:56:21 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:56:21 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 16:56:21 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 16:56:21 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 16:56:21 UTC] PHP   7. ControllerStartupStartup->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 16:56:21 UTC] PHP   8. Openbay->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/startup.php:62
+[21-Dec-2022 16:56:21 UTC] PHP   9. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/openbay.php:22
+[21-Dec-2022 16:56:21 UTC] PHP  10. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:56:21 UTC] PHP  11. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:56:21 UTC] PHP  12. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:56:21 UTC] PHP  13. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:56:21 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:56:21 UTC] PHP Stack trace:
+[21-Dec-2022 16:56:21 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:56:21 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:56:21 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:56:21 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 16:56:21 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 16:56:21 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 16:56:21 UTC] PHP   7. ControllerStartupStartup->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 16:56:21 UTC] PHP   8. Registry->set() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/startup.php:62
+[21-Dec-2022 16:56:21 UTC] PHP   9. Log->__destruct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/registry.php:34
+[21-Dec-2022 16:56:21 UTC] PHP  10. fclose() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:39
+[21-Dec-2022 16:56:21 UTC] PHP  11. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:39
+[21-Dec-2022 16:56:21 UTC] PHP  12. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:56:21 UTC] PHP  13. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:56:21 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:56:21 UTC] PHP Stack trace:
+[21-Dec-2022 16:56:21 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:56:21 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:56:21 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:56:21 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 16:56:21 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 16:56:21 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 16:56:21 UTC] PHP   7. ControllerStartupError->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 16:56:21 UTC] PHP   8. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/error.php:4
+[21-Dec-2022 16:56:21 UTC] PHP   9. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:56:21 UTC] PHP  10. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:56:21 UTC] PHP  11. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:56:21 UTC] PHP  12. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:56:21 UTC] PHP Fatal error:  Uncaught RuntimeException: Unable to create the cache directory (/var/www/storage3/cache/dc). in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Cache/Filesystem.php:62
+Stack trace:
+#0 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Environment.php(400): Twig_Cache_Filesystem->write('/var/www/storag...', '<?php\n\n/* commo...')
+#1 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/twig.php(33): Twig_Environment->loadTemplate('common/header.t...')
+#2 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template.php(51): Template\Twig->render('common/header', '1')
+#3 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/loader.php(125): Template->render('common/header', '1')
+#4 /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/common/header.php(89): Loader->view('common/header', Array)
+#5 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Cache/Filesystem.php on line 62
+[21-Dec-2022 19:57:12 Europe/Moscow] PHP Warning:  fopen(/var/www/storage3/logs/error.log): failed to open stream: No such file or directory in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 22
+[21-Dec-2022 19:57:12 Europe/Moscow] PHP Stack trace:
+[21-Dec-2022 19:57:12 Europe/Moscow] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 19:57:12 Europe/Moscow] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 19:57:12 Europe/Moscow] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 19:57:12 Europe/Moscow] PHP   4. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:12
+[21-Dec-2022 19:57:12 Europe/Moscow] PHP   5. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:57:12 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:57:12 UTC] PHP Stack trace:
+[21-Dec-2022 16:57:12 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:57:12 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:57:12 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:57:12 UTC] PHP   4. Openbay->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:124
+[21-Dec-2022 16:57:12 UTC] PHP   5. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/openbay.php:22
+[21-Dec-2022 16:57:12 UTC] PHP   6. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:57:12 UTC] PHP   7. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:57:12 UTC] PHP   8. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:57:12 UTC] PHP   9. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:57:12 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:57:12 UTC] PHP Stack trace:
+[21-Dec-2022 16:57:12 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:57:12 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:57:12 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:57:12 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 16:57:12 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 16:57:12 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 16:57:12 UTC] PHP   7. ControllerStartupStartup->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 16:57:12 UTC] PHP   8. Openbay->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/startup.php:62
+[21-Dec-2022 16:57:12 UTC] PHP   9. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/openbay.php:22
+[21-Dec-2022 16:57:12 UTC] PHP  10. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:57:12 UTC] PHP  11. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:57:12 UTC] PHP  12. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:57:12 UTC] PHP  13. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:57:12 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:57:12 UTC] PHP Stack trace:
+[21-Dec-2022 16:57:12 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:57:12 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:57:12 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:57:12 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 16:57:12 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 16:57:12 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 16:57:12 UTC] PHP   7. ControllerStartupStartup->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 16:57:12 UTC] PHP   8. Registry->set() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/startup.php:62
+[21-Dec-2022 16:57:12 UTC] PHP   9. Log->__destruct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/registry.php:34
+[21-Dec-2022 16:57:12 UTC] PHP  10. fclose() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:39
+[21-Dec-2022 16:57:12 UTC] PHP  11. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:39
+[21-Dec-2022 16:57:12 UTC] PHP  12. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:57:12 UTC] PHP  13. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:57:12 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 16:57:12 UTC] PHP Stack trace:
+[21-Dec-2022 16:57:12 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 16:57:12 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 16:57:12 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 16:57:12 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 16:57:12 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 16:57:12 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 16:57:12 UTC] PHP   7. ControllerStartupError->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 16:57:12 UTC] PHP   8. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/error.php:4
+[21-Dec-2022 16:57:12 UTC] PHP   9. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:57:12 UTC] PHP  10. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 16:57:12 UTC] PHP  11. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 16:57:12 UTC] PHP  12. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 16:57:12 UTC] PHP Fatal error:  Uncaught RuntimeException: Unable to create the cache directory (/var/www/storage3/cache/dc). in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Cache/Filesystem.php:62
+Stack trace:
+#0 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Environment.php(400): Twig_Cache_Filesystem->write('/var/www/storag...', '<?php\n\n/* commo...')
+#1 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/twig.php(33): Twig_Environment->loadTemplate('common/header.t...')
+#2 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template.php(51): Template\Twig->render('common/header', '1')
+#3 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/loader.php(125): Template->render('common/header', '1')
+#4 /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/common/header.php(89): Loader->view('common/header', Array)
+#5 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Cache/Filesystem.php on line 62
+[21-Dec-2022 20:01:42 Europe/Moscow] PHP Warning:  fopen(/var/www/storage3/logs/error.log): failed to open stream: No such file or directory in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 22
+[21-Dec-2022 20:01:42 Europe/Moscow] PHP Stack trace:
+[21-Dec-2022 20:01:42 Europe/Moscow] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 20:01:42 Europe/Moscow] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 20:01:42 Europe/Moscow] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 20:01:42 Europe/Moscow] PHP   4. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:12
+[21-Dec-2022 20:01:42 Europe/Moscow] PHP   5. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 17:01:42 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 17:01:42 UTC] PHP Stack trace:
+[21-Dec-2022 17:01:42 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 17:01:42 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 17:01:42 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 17:01:42 UTC] PHP   4. Openbay->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:124
+[21-Dec-2022 17:01:42 UTC] PHP   5. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/openbay.php:22
+[21-Dec-2022 17:01:42 UTC] PHP   6. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 17:01:42 UTC] PHP   7. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 17:01:42 UTC] PHP   8. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 17:01:42 UTC] PHP   9. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 17:01:42 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 17:01:42 UTC] PHP Stack trace:
+[21-Dec-2022 17:01:42 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 17:01:42 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 17:01:42 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 17:01:42 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 17:01:42 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 17:01:42 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 17:01:42 UTC] PHP   7. ControllerStartupStartup->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 17:01:42 UTC] PHP   8. Openbay->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/startup.php:62
+[21-Dec-2022 17:01:42 UTC] PHP   9. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/openbay.php:22
+[21-Dec-2022 17:01:42 UTC] PHP  10. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 17:01:42 UTC] PHP  11. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 17:01:42 UTC] PHP  12. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 17:01:42 UTC] PHP  13. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 17:01:42 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 17:01:42 UTC] PHP Stack trace:
+[21-Dec-2022 17:01:42 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 17:01:42 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 17:01:42 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 17:01:42 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 17:01:42 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 17:01:42 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 17:01:42 UTC] PHP   7. ControllerStartupStartup->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 17:01:42 UTC] PHP   8. Registry->set() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/startup.php:62
+[21-Dec-2022 17:01:42 UTC] PHP   9. Log->__destruct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/registry.php:34
+[21-Dec-2022 17:01:42 UTC] PHP  10. fclose() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:39
+[21-Dec-2022 17:01:42 UTC] PHP  11. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:39
+[21-Dec-2022 17:01:42 UTC] PHP  12. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 17:01:42 UTC] PHP  13. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 17:01:42 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php on line 31
+[21-Dec-2022 17:01:42 UTC] PHP Stack trace:
+[21-Dec-2022 17:01:42 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[21-Dec-2022 17:01:42 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[21-Dec-2022 17:01:42 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[21-Dec-2022 17:01:42 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[21-Dec-2022 17:01:42 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:46
+[21-Dec-2022 17:01:42 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[21-Dec-2022 17:01:42 UTC] PHP   7. ControllerStartupError->index() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php:79
+[21-Dec-2022 17:01:42 UTC] PHP   8. Log->__construct() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/error.php:4
+[21-Dec-2022 17:01:42 UTC] PHP   9. fopen() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 17:01:42 UTC] PHP  10. {closure:/var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:17-50}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:22
+[21-Dec-2022 17:01:42 UTC] PHP  11. Log->write() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:46
+[21-Dec-2022 17:01:42 UTC] PHP  12. fwrite() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/log.php:31
+[21-Dec-2022 17:01:42 UTC] PHP Fatal error:  Uncaught RuntimeException: Unable to create the cache directory (/var/www/storage3/cache/dc). in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Cache/Filesystem.php:62
+Stack trace:
+#0 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Environment.php(400): Twig_Cache_Filesystem->write('/var/www/storag...', '<?php\n\n/* commo...')
+#1 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/twig.php(33): Twig_Environment->loadTemplate('common/header.t...')
+#2 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template.php(51): Template\Twig->render('common/header', '1')
+#3 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/loader.php(125): Template->render('common/header', '1')
+#4 /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/common/header.php(89): Loader->view('common/header', Array)
+#5 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php in /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/library/template/Twig/Cache/Filesystem.php on line 62
+[23-Jan-2023 06:44:02 UTC] PHP Fatal error:  require_once(): Failed opening required '/var/www/html/shop/catalog/model/extension/payment/yoomoney/autoload.php' (include_path='.:/opt/php74') in /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/model/extension/payment/yoomoney/YooMoneyKassaModel.php on line 3
+[23-Jan-2023 06:44:02 UTC] PHP Stack trace:
+[23-Jan-2023 06:44:02 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[23-Jan-2023 06:44:02 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[23-Jan-2023 06:44:02 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[23-Jan-2023 06:44:02 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[23-Jan-2023 06:44:02 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:56
+[23-Jan-2023 06:44:02 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[23-Jan-2023 06:44:02 UTC] PHP   7. ControllerStartupRouter->index() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/action.php:79
+[23-Jan-2023 06:44:02 UTC] PHP   8. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/router.php:26
+[23-Jan-2023 06:44:02 UTC] PHP   9. ControllerExtensionPaymentYoomoney->index() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/action.php:79
+[23-Jan-2023 06:44:02 UTC] PHP  10. Proxy->getKassaModel() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/extension/payment/yoomoney.php:40
+[23-Jan-2023 06:44:02 UTC] PHP  11. Proxy->__call() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/extension/payment/yoomoney.php:40
+[23-Jan-2023 06:44:02 UTC] PHP  12. Loader->{closure:/var/www/umolab_devic_usr/data/storage3/modification/system/engine/loader.php:221-263}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/proxy.php:47
+[23-Jan-2023 06:44:02 UTC] PHP  13. ModelExtensionPaymentYoomoney->getKassaModel() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/loader.php:249
+[23-Jan-2023 06:44:02 UTC] PHP  14. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/model/extension/payment/yoomoney.php:360
+[23-Jan-2023 06:45:13 UTC] PHP Fatal error:  require_once(): Failed opening required '/var/www/html/shop/catalog/model/extension/payment/yoomoney/autoload.php' (include_path='.:/opt/php74') in /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/model/extension/payment/yoomoney/YooMoneyKassaModel.php on line 3
+[23-Jan-2023 06:45:13 UTC] PHP Stack trace:
+[23-Jan-2023 06:45:13 UTC] PHP   1. {main}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:0
+[23-Jan-2023 06:45:13 UTC] PHP   2. start() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/index.php:19
+[23-Jan-2023 06:45:13 UTC] PHP   3. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php:104
+[23-Jan-2023 06:45:13 UTC] PHP   4. Router->dispatch() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php:168
+[23-Jan-2023 06:45:13 UTC] PHP   5. Router->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:56
+[23-Jan-2023 06:45:13 UTC] PHP   6. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php:67
+[23-Jan-2023 06:45:13 UTC] PHP   7. ControllerStartupRouter->index() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/action.php:79
+[23-Jan-2023 06:45:13 UTC] PHP   8. Action->execute() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/router.php:26
+[23-Jan-2023 06:45:13 UTC] PHP   9. ControllerExtensionExtensionPayment->uninstall() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/action.php:79
+[23-Jan-2023 06:45:13 UTC] PHP  10. Loader->controller() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/extension/extension/payment.php:47
+[23-Jan-2023 06:45:13 UTC] PHP  11. Action->execute() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/loader.php:48
+[23-Jan-2023 06:45:13 UTC] PHP  12. ControllerExtensionPaymentYoomoney->uninstall() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/action.php:79
+[23-Jan-2023 06:45:13 UTC] PHP  13. Proxy->uninstall() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/extension/payment/yoomoney.php:405
+[23-Jan-2023 06:45:13 UTC] PHP  14. Proxy->__call() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/extension/payment/yoomoney.php:405
+[23-Jan-2023 06:45:13 UTC] PHP  15. Loader->{closure:/var/www/umolab_devic_usr/data/storage3/modification/system/engine/loader.php:221-263}() /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/proxy.php:47
+[23-Jan-2023 06:45:13 UTC] PHP  16. ModelExtensionPaymentYoomoney->uninstall() /var/www/umolab_devic_usr/data/storage3/modification/system/engine/loader.php:249
+[23-Jan-2023 06:45:13 UTC] PHP  17. ModelExtensionPaymentYoomoney->log() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/model/extension/payment/yoomoney.php:68
+[23-Jan-2023 06:45:13 UTC] PHP  18. ModelExtensionPaymentYoomoney->getKassaModel() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/model/extension/payment/yoomoney.php:73
+[23-Jan-2023 06:45:13 UTC] PHP  19. require_once() /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/model/extension/payment/yoomoney.php:360
+[23-Jan-2023 06:47:40 UTC] PHP Fatal error:  Uncaught Error: Class 'ZipArchive' not found in /var/www/umolab_devic_usr/data/storage3/modification/admin/controller/marketplace/install.php:61
+Stack trace:
+#0 /var/www/umolab_devic_usr/data/storage3/modification/system/engine/action.php(79): ControllerMarketplaceInstall->unzip()
+#1 /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/router.php(26): Action->execute(Object(Registry), Array)
+#2 /var/www/umolab_devic_usr/data/storage3/modification/system/engine/action.php(79): ControllerStartupRouter->index()
+#3 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php(67): Action->execute(Object(Registry))
+#4 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php(56): Router->execute(Object(Action))
+#5 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php(168): Router->dispatch(Object(Action), Object(Action))
+#6 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php(104): require_once('/var/www/umolab in /var/www/umolab_devic_usr/data/storage3/modification/admin/controller/marketplace/install.php on line 61
+[23-Jan-2023 06:50:49 UTC] PHP Fatal error:  Uncaught Error: Class 'ZipArchive' not found in /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/marketplace/install.php:61
+Stack trace:
+#0 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php(79): ControllerMarketplaceInstall->unzip()
+#1 /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/router.php(26): Action->execute(Object(Registry), Array)
+#2 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php(79): ControllerStartupRouter->index()
+#3 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php(67): Action->execute(Object(Registry))
+#4 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php(56): Router->execute(Object(Action))
+#5 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php(168): Router->dispatch(Object(Action), Object(Action))
+#6 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php(104): require_once('/var/www/umo in /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/marketplace/install.php on line 61
+[23-Jan-2023 06:59:48 UTC] PHP Fatal error:  Uncaught Error: Class 'ZipArchive' not found in /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/marketplace/install.php:61
+Stack trace:
+#0 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php(79): ControllerMarketplaceInstall->unzip()
+#1 /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/startup/router.php(26): Action->execute(Object(Registry), Array)
+#2 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/action.php(79): ControllerStartupRouter->index()
+#3 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php(67): Action->execute(Object(Registry))
+#4 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/engine/router.php(56): Router->execute(Object(Action))
+#5 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/framework.php(168): Router->dispatch(Object(Action), Object(Action))
+#6 /var/www/umolab_devic_usr/data/www/umolab-devices.com/system/startup.php(104): require_once('/var/www/umo in /var/www/umolab_devic_usr/data/www/umolab-devices.com/admin/controller/marketplace/install.php on line 61

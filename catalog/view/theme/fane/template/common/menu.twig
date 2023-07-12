@@ -1,0 +1,88 @@
+<div class="nav-menu">
+       <div class="toggler-block">
+             <button class="toggler">
+             <span class="icon"></span>
+             </button>
+             <span class="text-category">{{ text_category }}</span>
+         </div>
+       <div class="menu-block">
+        {% if categories %}
+    <ul class="menu">
+        {% for category in categories %}
+        {% if category.children %}
+              <li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
+              <div id="m" class="dropdown-menu" >
+            <div class="dropdown-inner">
+                 {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+              <ul class="list-unstyled">
+                {% for child in children %}
+                <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endfor %}
+              <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a>
+              </div>
+           </div>
+              </li>
+             {% else %}
+        <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+        {% endif %}
+        {% endfor %}
+  </ul>
+{% endif %}
+</div>
+<ul class="right-l" >
+     <li id="manufacturrer"><a  href="{{ manufacturer }}"><i class="fa fa-cogs" aria-hidden="true"></i><span class="link-text">
+         {{ text_manufacturer }}
+     </span></a></li>
+       <li id="special"><a href="{{ special }}"><i class="fa fa-percent" aria-hidden="true"></i><span class="link-text">
+           {{ text_special }}
+       </span></a></li>
+     <li id="blog-drop">{{ blog_menu }}</li>
+        <li id="infodrop">
+           <a href="{{information }}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-info-circle" aria-hidden="true"></i><span class="link-text">
+               {{ text_information }}
+           </span></a>
+        <ul class="dropdown-menu" id="info-menu">
+        {% for information in informations %}
+          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+            </ul>
+        </li>
+        <li><a href="{{ contact }}"><i class="fa fa-phone" aria-hidden="true"></i><span class="link-text">
+            {{ text_contact }}
+        </span></a></li>
+        <li id="search-block">
+       <a class="icon-link" href="" data-toggle="dropdown"><i class="fa fa-search" aria-hidden="true"></i></a>
+        <div id="search" class="dropdown-menu">
+                 {{search}}
+             </div>
+        </li>
+        <li id="acc" class="account-dropdown" >
+             <a class="icon-link" id="account-menu" data-placement="bottom" data-toggle="dropdown" title="{{text_account}}" onclick="return false">
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+             </a>
+          <div id="account-link" class="dropdown-menu">
+            <ul class="accounts-link">
+            {% if logged %}
+            <li><a href="{{account}}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{text_account}}</a></li>
+            <li><a href="{{order}}"><i class="fa fa-history" aria-hidden="true"></i> {{text_order}}</a></li>
+            <li><a href="{{transaction}}"><i class="fa fa-money" aria-hidden="true"></i> {{text_transaction}}</a></li>
+            <li><a href="{{logout}}"><i class="fa fa-sign-out" aria-hidden="true"></i> {{text_logout}}</a></li>
+            {% else %}
+            <li><a href="{{login}}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{text_login}}</a></li>
+            <li><a href="{{register}}"><i class="fa fa-user-plus" aria-hidden="true"></i> {{text_register}}</a></li>
+           {% endif %}
+           <li><a href="{{ wishlist }}" id="wishlist-total" title="{{ text_wishlist }}"><i class="fa fa-heart"></i> {{ text_wishlist }}</a></li>
+           <li><a href="{{ compare }}" id="compare-total" class="btn btn-link"><i class="fa fa-bar-chart" aria-hidden="true"></i> {{ text_compare }}</a></li>
+              </ul>
+           <div class="settings">
+               {{currency}}
+               {{language}}
+          </div>
+          </div>
+        </li>
+</ul>
+</div>
+
+         

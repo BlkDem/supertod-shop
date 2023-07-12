@@ -1,0 +1,326 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button onclick="$('#content form #apply').attr('value', '1'); $('#' + $('#content form').attr('id')).submit();" data-toggle="tooltip" title="{{ button_apply }}" class="btn btn-success"><i class="fa fa-check"></i></button>
+        <button type="submit" form="form-shipping" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+      </div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    {% if success %}
+    <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    {% if text_old_version %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ text_old_version }}</div>
+    {% endif %}
+    {% if text_new_version %}
+    <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ text_new_version }}</div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-shipping" class="form-horizontal">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-general" data-toggle="tab"><i class="fa fa-cog"></i> {{ tab_general }}</a></li>
+            <li><a href="#tab-help" data-toggle="tab" class="btn btn-info" style="color: #424242;"><b><i class="fa fa-life-ring"></i> {{ tab_support }}</b></a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab-general">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+                <div class="col-sm-5">
+                  <select name="shipping_gixocruspostcalc_status" id="input-status" class="form-control">
+                    {% if shipping_gixocruspostcalc_status %}
+                    <option value="1" selected="selected">{{ text_enabled }}</option>
+                    <option value="0">{{ text_disabled }}</option>
+                    {% else %}
+                    <option value="1">{{ text_enabled }}</option>
+                    <option value="0" selected="selected">{{ text_disabled }}</option>
+                    {% endif %}
+                  </select>
+                </div>
+                <div class="col-sm-5">
+                  <a class="btn btn-success" onclick="help('help_thanks');"><i class="fa fa-money"></i> {{ help_thanks }}</a>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">{{ entry_name }}</label>
+                <div class="col-sm-10">
+                {% for language in languages %}
+                  <div class="input-group"><span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /></span>
+                    <input type="text" name="shipping_gixocruspostcalc_name[{{ language.language_id }}]" value="{{ attribute(shipping_gixocruspostcalc_name, language.language_id) | trim }}" placeholder="{{ entry_name }}" class="form-control" />
+                  </div>
+                {% endfor %}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">{{ entry_delivery }}</label>
+                <div class="col-sm-10">
+                  <div class="well well-sm" style="height: 150px; overflow: auto;"> {% for shipping in shippings %}
+                    <div class="checkbox">
+                      <label> {% if shipping in shipping_gixocruspostcalc_delivery_services %}
+                        <input type="checkbox" name="shipping_gixocruspostcalc_delivery_services[]" value="{{ shipping }}" checked="checked" />
+                        {{ attribute(shippings_text, shipping) }}
+                        {% else %}
+                        <input type="checkbox" name="shipping_gixocruspostcalc_delivery_services[]" value="{{ shipping }}" />
+                        {{ attribute(shippings_text, shipping) }}
+                        {% endif %} </label>
+                    </div>
+                    {% endfor %}</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-postcode"><span data-toggle="tooltip" title="{{ help_postcode }}">{{ entry_postcode }}</span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="shipping_gixocruspostcalc_postcode" value="{{ shipping_gixocruspostcalc_postcode }}" placeholder="{{ entry_postcode }}" id="input-postcode" class="form-control" />
+                 {% if error_postcode %}
+                 <div class="text-danger">{{ error_postcode }}</div>
+                 {% endif %} </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="{{ help_display_weight }}">{{ entry_display_weight }}</span></label>
+                <div class="col-sm-10">
+                  <label class="radio-inline">
+                    {% if shipping_gixocruspostcalc_display_weight %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_weight" value="1" checked="checked" />
+                    {{ text_yes }}
+                    {% else %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_weight" value="1" />
+                    {{ text_yes }}
+                    {% endif %}
+                  </label>
+                  <label class="radio-inline">
+                    {% if not shipping_gixocruspostcalc_display_weight %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_weight" value="0" checked="checked" />
+                    {{ text_no }}
+                    {% else %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_weight" value="0" />
+                    {{ text_no }}
+                    {% endif %}
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="{{ help_display_insurance }}">{{ entry_display_insurance }}</span></label>
+                <div class="col-sm-10">
+                  <label class="radio-inline">
+                    {% if shipping_gixocruspostcalc_display_insurance %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_insurance" value="1" checked="checked" />
+                    {{ text_yes }}
+                    {% else %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_insurance" value="1" />
+                    {{ text_yes }}
+                    {% endif %}
+                  </label>
+                  <label class="radio-inline">
+                    {% if not shipping_gixocruspostcalc_display_insurance %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_insurance" value="0" checked="checked" />
+                    {{ text_no }}
+                    {% else %}
+                    <input type="radio" name="shipping_gixocruspostcalc_display_insurance" value="0" />
+                    {{ text_no }}
+                    {% endif %}
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-weight-class"><span data-toggle="tooltip" title="{{ help_weight }}">{{ entry_weight_class }}</span></label>
+                <div class="col-sm-10">
+                  <select name="shipping_gixocruspostcalc_weight_class_id" id="input-weight-class" class="form-control">
+                    {% for weight_class in weight_classes %}
+                    {% if weight_class.weight_class_id == shipping_gixocruspostcalc_weight_class_id %}
+                    <option value="{{ weight_class.weight_class_id }}" selected="selected">{{ weight_class.title }}</option>
+                    {% else %}
+                    <option value="{{ weight_class.weight_class_id }}">{{ weight_class.title }}</option>
+                    {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="{{ help_currency }}">{{ entry_currency }}</span></label>
+                <div class="col-sm-10">
+                  <select name="shipping_gixocruspostcalc_currency" id="input-currency" class="form-control">
+                    {% for currency in currencies %}
+                    {% if currency.code == shipping_gixocruspostcalc_currency %}
+                    <option value="{{ currency.code }}" selected="selected">({{ currency.code }}) {{ currency.title }}</option>
+                    {% else %}
+                    <option value="{{ currency.code }}">({{ currency.code }}) {{ currency.title }}</option>
+                    {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-tax-class">{{ entry_tax_class }}</label>
+                <div class="col-sm-10">
+                  <select name="shipping_gixocruspostcalc_tax_class_id" id="input-tax-class" class="form-control">
+                    <option value="0">{{ text_none }}</option>
+                    {% for tax_class in tax_classes %}
+                    {% if tax_class.tax_class_id == shipping_gixocruspostcalc_tax_class_id %}
+                    <option value="{{ tax_class.tax_class_id }}" selected="selected">{{ tax_class.title }}</option>
+                    {% else %}
+                    <option value="{{ tax_class.tax_class_id }}">{{ tax_class.title }}</option>
+                    {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-geo-zone">{{ entry_geo_zone }}</label>
+                <div class="col-sm-10">
+                  <select name="shipping_gixocruspostcalc_geo_zone_id" id="input-geo-zone" class="form-control">
+                    <option value="0">{{ text_all_zones }}</option>
+                    {% for geo_zone in geo_zones %}
+                    {% if geo_zone.geo_zone_id == shipping_gixocruspostcalc_geo_zone_id %}
+                    <option value="{{ geo_zone.geo_zone_id }}" selected="selected">{{ geo_zone.name }}</option>
+                    {% else %}
+                    <option value="{{ geo_zone.geo_zone_id }}">{{ geo_zone.name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-sort-order">{{ entry_sort_order }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="shipping_gixocruspostcalc_sort_order" value="{{ shipping_gixocruspostcalc_sort_order }}" placeholder="{{ entry_sort_order }}" id="input-sort-order" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">{{ entry_image }}</label>
+                <div class="col-sm-2">
+                  <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="{{ shipping_gixocruspostcalc_thumb }}" alt="" title="" data-placeholder="{{ placeholder }}" /></a>
+                  <input type="hidden" name="shipping_gixocruspostcalc_image" value="{{ shipping_gixocruspostcalc_image }}" id="input-image" />
+                </div>
+                <label class="col-sm-3 control-label">{{ entry_image_description }}</label>
+                <div class="col-sm-5">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" name="shipping_gixocruspostcalc_image_width" value="{{ shipping_gixocruspostcalc_image_width }}" placeholder="{{ entry_width }}" class="form-control" />
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" name="shipping_gixocruspostcalc_image_height" value="{{ shipping_gixocruspostcalc_image_height }}" placeholder="{{ entry_height }}" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-nds"><span data-toggle="tooltip" title="{{ help_nds }}">{{ entry_nds }}</span></label>
+                <div class="col-sm-10">
+                  <select name="shipping_gixocruspostcalc_nds" id="input-nds" class="form-control">
+                    {% if shipping_gixocruspostcalc_nds %}
+                    <option value="1" selected="selected">{{ text_enabled }}</option>
+                    <option value="0">{{ text_disabled }}</option>
+                    {% else %}
+                    <option value="1">{{ text_enabled }}</option>
+                    <option value="0" selected="selected">{{ text_disabled }}</option>
+                    {% endif %}
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-help">
+              <div class="well">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">{{ tab_support }}</label>
+                  <div class="col-sm-8">
+                    <a class="btn btn-info" onclick="help('help_support');"><i class="fa fa-life-ring"></i> {{ tab_support }}</a>&nbsp;&nbsp;
+                    <a class="btn btn-success" onclick="help('help_thanks');"><i class="fa fa-money"></i> {{ help_thanks }}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">{{ text_developer }}</label>
+                <div class="col-sm-10">GixOC: <a target="_blank" href="https://gixoc.ru" class="btn btn-link"><i class="fa fa-globe"></i> GixOC.ru</a>|<a target="_blank" href="tg://resolve?domain=GixOC_NotificationsBot" class="btn btn-link"><i class="fa fa-paper-plane"></i> @GixOC_NotificationsBot</a>|<a target="_blank" href="viber://pa/info?uri=GixOC_NotificationsBot" class="btn btn-link"><i class="fa fa-phone"></i> @GixOC_NotificationsBot</a></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">{{ help_license }}</label>
+                <div class="col-sm-10"><a onclick="help('help_license');" class="btn btn-link">GNU General Public License version 3 (GPLv3)</a></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">{{ button_download }}</label>
+                <div class="col-sm-10">
+                  <li><a target="_blank" href="https://gixoc.ru/gixocruspostcalc/">GixOC.ru</a></li>
+                  <li>Telegram Bot - <a target="_blank" href="tg://resolve?domain=GixOC_NotificationsBot">@GixOC_NotificationsBot</a></li>
+                  <li>Viber Bot - <a target="_blank" href="viber://pa/info?uri=GixOC_NotificationsBot">@GixOC_NotificationsBot</a></li>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">{{ text_sources }}</label>
+                <div class="col-sm-10">
+                  <ul>
+                    <li><a target="_blank" href="https://www.opencart.com/" class="btn btn-link">Opencart</a></li>
+                    <li><a target="_blank" href="https://github.com/gixoc/AdminNotifications" class="btn btn-link">GixOC.ru: Admin Notifications / Уведомления администратора (Telegram, Viber)</a></li>
+                    <li><a target="_blank" href="https://github.com/gixoc/Smart_Customer_Dashboard" class="btn btn-link">GixOC: Smart Customer Dashboard / Настройка Личного кабинета покупателя и партнера</a></li>
+                    <li><a target="_blank" href="https://php.net/" class="btn btn-link">PHP.NET</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>  
+        <input type="hidden" name="apply" id="apply" value="0"></form>
+      </div>
+    </div>
+  </div>
+</div>
+<div data-backdrop="true" data-keyboard="true" id="ModalBox" class="modal fade">
+  <div class="modal-dialog modal-dialog-centered" style="width: 90%;">
+    <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">{{ entry_wait }}</h3>
+    </div>  
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ button_close }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+function help(key) {
+  $("#ModalBox").modal('show');
+  $.ajax({  
+    url: 'index.php?route=extension/shipping/gixocruspostcalc/help&user_token=' + '{{ user_token }}',
+    type: 'post',
+    dataType: 'json',
+    data: 'key=' + key,
+    success: function(json) {
+        if (json['error']) {
+            $(".modal-title").html('Error!');
+            $(".modal-body").html('<div class="h4" style="color:red;text-align:center;">' + json['error'] + '</div>');
+        }
+
+        if (json['success']) {
+            $(".modal-title").html(json['header']);
+            $(".modal-body").html(json['success']);
+        }
+    },
+    error: function(xhr, ajaxOptions, thrownError) {
+      $("#ModalBox").modal('hide');
+      alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+    }
+  });
+}
+//--></script>
+{{ footer }} 

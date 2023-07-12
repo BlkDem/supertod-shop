@@ -1,0 +1,49 @@
+<div class="h3">Платная поддержка</div>
+<div class="h4">
+<div class="page-header">
+<b>Вы можете заказать платную поддержку/доработку:</b><br>
+<li class="page-header">В Telegram - <a target="_blank" href="tg://resolve?domain=nokiannordman">@nokiannordman</a></li>
+<li class="page-header">С помощью сервиса Yandex Денег по ссылкам ниже.</li>
+<form method="post" target="_blank" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410014588140805">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="formcomment" value="Модуль nokianrussianpost">
+<input type="hidden" name="short-dest" value="Модуль nokianrussianpost">
+<input type="hidden" name="label" value="{{ email }}">
+<input type="hidden" name="comment" value="{{ email }}">
+<input type="hidden" name="need-email" value="true"> 
+<input type="hidden" name="targets" value="Адаптация">
+<input type="hidden" name="sum" value="500.00" data-type="number">
+<button type="submit" class="btn btn-warning">Адаптация под другую версию OpenCart - 500 руб.</button>
+</form><br>
+<form method="post" target="_blank" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410014588140805">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="formcomment" value="Модуль nokianrussianpost">
+<input type="hidden" name="short-dest" value="Модуль nokianrussianpost">
+<input type="hidden" name="label" value="{{ email }}">
+<input type="hidden" name="comment" value="{{ email }}">
+<input type="hidden" name="need-email" value="true"> 
+<input type="hidden" name="targets" value="Доработка">
+<input type="hidden" name="sum" value="500.00" data-type="number">
+<button type="submit" class="btn btn-primary">Доработка под другие модули, темы - 500 руб/модуль</button>
+</form><br>
+<form method="post" target="_blank" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410014588140805">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="formcomment" value="Модуль nokianrussianpost">
+<input type="hidden" name="short-dest" value="Модуль nokianrussianpost">
+<input type="hidden" name="label" value="{{ email }}">
+<input type="hidden" name="comment" value="{{ email }}">
+<input type="hidden" name="need-email" value="true"> 
+<input type="hidden" name="targets" value="Установка">
+<input type="hidden" name="sum" value="300.00" data-type="number">
+<button type="submit" class="btn btn-success">Установка / Настройка модуля - 300 руб.</button>
+</form>
+</div>
+<div class="alert alert-danger"><i class="fa fa-info-circle"></i> Внимание! Доработка и адаптация осуществляется по следующему принципу: оплачивается разово, потом становится доступно всем бесплатно. Если желаете индивидуальную доработку/адаптацию - цена увеличивается на 1000 руб/модуль</div>
+</div>
+{% if help_thanks %} {{ help_thanks }} {% endif %}

@@ -1,0 +1,381 @@
+{{ header }}{{ column_left }}
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="pull-right">
+                <button type="submit" form="form-boxberry" data-toggle="tooltip" title="{{ button_save }}"
+                        class="btn btn-primary"><i class="fa fa-save"></i></button>
+                <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i
+                            class="fa fa-reply"></i></a></div>
+            <h1>{{ heading_title }}</h1>
+            <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        {% if error_warning %}
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-boxberry"
+                      class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active">
+                                    <a href="#tab-general" data-toggle="tab">{{ tab_general }}</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab-general">
+                                    <table class="table table-bordered">
+
+                                        <tr>
+                                            <td>{{ text_api_token }}</td>
+                                            <td><input type="text" name="shipping_boxberry_api_token"
+                                                       value="{{ shipping_boxberry_api_token }}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ text_api_url }}</td>
+                                            <td><input type="text" name="shipping_boxberry_api_url"
+                                                       value="{{ shipping_boxberry_api_url }}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ text_widget_url }}</td>
+                                            <td><input type="text" name="shipping_boxberry_widget_url"
+                                                       value="{{ shipping_boxberry_widget_url }}"/></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_weight }}</td>
+                                            <td><input type="text" name="shipping_boxberry_weight"
+                                                       value="{{ shipping_boxberry_weight }}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ text_weight_min }}</td>
+                                            <td><input type="text" name="shipping_boxberry_weight_min"
+                                                       value="{{ shipping_boxberry_weight_min }}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ text_weight_max }}</td>
+                                            <td><input type="text" name="shipping_boxberry_weight_max"
+                                                       value="{{ shipping_boxberry_weight_max }}"/>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_status }}</td>
+                                            <td><select name="shipping_boxberry_status">
+                                                    {% if shipping_boxberry_status %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_enabled }}</option>
+                                                        <option value="0">{{ text_disabled }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_enabled }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_disabled }}</option>
+                                                    {% endif %}
+                                                </select></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ text_sort_order }}</td>
+                                            <td><input type="text" name="shipping_boxberry_sort_order"
+                                                       value="{{ shipping_boxberry_sort_order }}" size="1"/></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_order_status }}</td>
+                                            <td>
+                                                <select name="shipping_boxberry_order_status">
+                                                    {% for order_status in order_statuses %}
+                                                        {% if order_status.order_status_id == shipping_boxberry_order_status %}
+                                                            <option value="{{ order_status.order_status_id }}"
+                                                                    selected="selected">{{ order_status.name }}</option>
+                                                        {% else %}
+                                                            <option value="{{ order_status.order_status_id }}">{{ order_status.name }}</option>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_weight_id }}</td>
+                                            <td>
+                                                <select name="shipping_boxberry_weight_class_id">
+                                                    {% for weight_id in weight_ids %}
+                                                        {% if weight_id.weight_class_id == shipping_boxberry_weight_class_id %}
+                                                            <option value="{{ weight_id.weight_class_id }}"
+                                                                    selected="selected">{{ weight_id.title }}</option>
+                                                        {% else %}
+                                                            <option value="{{ weight_id.weight_class_id }}">{{ weight_id.title }}</option>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ text_length_id }}</td>
+                                            <td>
+                                                <select name="shipping_boxberry_length_class_id">
+                                                    {% for length_id in length_ids %}
+                                                        {% if length_id.length_class_id == shipping_boxberry_length_class_id %}
+                                                            <option value="{{ length_id.length_class_id }}"
+                                                                    selected="selected">{{ length_id.title }}</option>
+                                                        {% else %}
+                                                            <option value="{{ length_id.length_class_id }}">{{ length_id.title }}</option>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_pickup_status }}</td>
+                                            <td>{{ text_status }} <select name="shipping_boxberry_pickup_status">
+                                                    {% if shipping_boxberry_pickup_status %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_enabled }}</option>
+                                                        <option value="0">{{ text_disabled }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_enabled }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_disabled }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_sucrh }} <select name="shipping_boxberry_pickup_sucrh">
+                                                    {% if shipping_boxberry_pickup_sucrh %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_sucrh_yes }}</option>
+                                                        <option value="0">{{ text_sucrh_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_sucrh_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_sucrh_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselcreate_auto }} <select name="shipping_boxberry_pickup_parselcreate_auto">
+                                                    {% if shipping_boxberry_pickup_parselcreate_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselcreate_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselcreate_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselsend_auto }} <select name="shipping_boxberry_pickup_parselsend_auto">
+                                                    {% if shipping_boxberry_pickup_parselsend_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselsend_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselsend_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>{{ boxberry_name }}<input name="shipping_boxberry_pickup_name"
+                                                                                 style="width: 80%;"
+                                                                                 value="{{ shipping_boxberry_pickup_name }}"
+                                                                                 type="text">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_pickup_prepaid_status }}</td>
+                                            <td>{{ text_status }}<select name="shipping_boxberry_pickup_prepaid_status">
+                                                    {% if shipping_boxberry_pickup_prepaid_status %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_enabled }}</option>
+                                                        <option value="0">{{ text_disabled }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_enabled }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_disabled }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_sucrh }} <select name="shipping_boxberry_pickup_prepaid_sucrh">
+                                                    {% if shipping_boxberry_pickup_prepaid_sucrh %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_sucrh_yes }}</option>
+                                                        <option value="0">{{ text_sucrh_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_sucrh_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_sucrh_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselcreate_auto }} <select name="shipping_boxberry_pickup_prepaid_parselcreate_auto">
+                                                    {% if shipping_boxberry_pickup_prepaid_parselcreate_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselcreate_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselcreate_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselsend_auto }} <select name="shipping_boxberry_pickup_prepaid_parselsend_auto">
+                                                    {% if shipping_boxberry_pickup_prepaid_parselsend_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselsend_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselsend_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>{{ boxberry_name }}<input
+                                                        name="shipping_boxberry_pickup_prepaid_name" style="width: 80%;"
+                                                        value="{{ shipping_boxberry_pickup_prepaid_name }}" type="text">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_courier_delivery_status }}</td>
+                                            <td>{{ text_status }}<select
+                                                        name="shipping_boxberry_courier_delivery_status">
+                                                    {% if shipping_boxberry_courier_delivery_status %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_enabled }}</option>
+                                                        <option value="0">{{ text_disabled }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_enabled }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_disabled }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_sucrh }} <select name="shipping_boxberry_courier_delivery_sucrh">
+                                                    {% if shipping_boxberry_courier_delivery_sucrh %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_sucrh_yes }}</option>
+                                                        <option value="0">{{ text_sucrh_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_sucrh_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_sucrh_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselcreate_auto }} <select name="shipping_boxberry_courier_delivery_parselcreate_auto">
+                                                    {% if shipping_boxberry_courier_delivery_parselcreate_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselcreate_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselcreate_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselsend_auto }} <select name="shipping_boxberry_courier_delivery_parselsend_auto">
+                                                    {% if shipping_boxberry_courier_delivery_parselsend_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselsend_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselsend_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>{{ boxberry_name }}<input
+                                                        name="shipping_boxberry_courier_delivery_name"
+                                                        style="width: 80%;"
+                                                        value="{{ shipping_boxberry_courier_delivery_name }}"
+                                                        type="text">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ text_courier_delivery_prepaid_status }}</td>
+                                            <td>{{ text_status }}<select
+                                                        name="shipping_boxberry_courier_delivery_prepaid_status">
+                                                    {% if shipping_boxberry_courier_delivery_prepaid_status %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_enabled }}</option>
+                                                        <option value="0">{{ text_disabled }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_enabled }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_disabled }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_sucrh }} <select name="shipping_boxberry_courier_delivery_prepaid_sucrh">
+                                                    {% if shipping_boxberry_courier_delivery_prepaid_sucrh %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_sucrh_yes }}</option>
+                                                        <option value="0">{{ text_sucrh_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_sucrh_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_sucrh_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselcreate_auto }} <select name="shipping_boxberry_courier_delivery_prepaid_parselcreate_auto">
+                                                    {% if shipping_boxberry_courier_delivery_prepaid_parselcreate_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselcreate_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselcreate_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselcreate_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>
+                                                {{ text_parselsend_auto }} <select name="shipping_boxberry_courier_delivery_prepaid_parselsend_auto">
+                                                    {% if shipping_boxberry_courier_delivery_prepaid_parselsend_auto %}
+                                                        <option value="1"
+                                                                selected="selected">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0">{{ text_parselsend_auto_no }}</option>
+                                                    {% else %}
+                                                        <option value="1">{{ text_parselsend_auto_yes }}</option>
+                                                        <option value="0"
+                                                                selected="selected">{{ text_parselsend_auto_no }}</option>
+                                                    {% endif %}
+                                                </select>
+                                                <p></p>{{ boxberry_name }}<input
+                                                        name="shipping_boxberry_courier_delivery_prepaid_name"
+                                                        style="width: 80%;"
+                                                        value="{{ shipping_boxberry_courier_delivery_prepaid_name }}"
+                                                        type="text">
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{ footer }}
