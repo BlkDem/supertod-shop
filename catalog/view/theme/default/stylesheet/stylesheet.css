@@ -195,7 +195,7 @@ div.required .control-label:before {
 }
 #top-links .dropdown-menu a {
 	text-shadow: none;
-	font-size: 1.2em;
+	/* font-size: 1.2em; */
 }
 #top-links .dropdown-menu a:hover {
 	color: #FFF;
@@ -1422,6 +1422,9 @@ button .btn-block .fa-shopping-cart {
 		border-radius: 8px;
 	}
 
+  .dropdown-menu li {
+    padding: 8px 16px;
+  }
 	.container {
 		padding-right: 0;
 		padding-left: 0;
@@ -1447,8 +1450,8 @@ button .btn-block .fa-shopping-cart {
 	}
 
 	.dropdown-menu li a {
-		font-size: 1.4rem;
-		padding: 0;
+		/* font-size: 1.4rem; */
+		/* padding: 0; */
 	}
 
 	.alert-success {
